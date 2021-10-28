@@ -18,8 +18,7 @@ const App = () => {
   return (
     <div>
       <GlobalStyle />
-
-      LET'S GO
+DAS
     </div>
   );
 }
