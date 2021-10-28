@@ -45,7 +45,6 @@ export const Icon = styled.span`
 
 export const Main = styled.div`
 /* border: 1px solid green; */
-
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
@@ -79,4 +78,32 @@ align-items: center;
 export const Gif = styled.img`
 width: 250px;
 height: 250px;
+`
+export const Get = styled.div`
+/* border: 1px solid white; */
+
+width: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+`
+
+export const Footer = styled.div`
+height: 145px;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+animation: ${slideIn} 1s linear 0.01s;
+
+a{
+    text-decoration: none;
+}
+
+h5{
+    position: absolute;
+    margin-top: 51px;
+}
 `
