@@ -13,8 +13,10 @@ const GlobalStyle = createGlobalStyle`
 
   }
   body{
-    background-color: #121212;
-  }
+   background-color: #121212;
+ 
+ 
+ }
 `
 const App = () => {
   return <div>

@@ -1,35 +1,35 @@
 import React from "react";
-import { Main, Icon, Header, GifDiv, Gif } from "./style";
+import { Main, Icon, Header, GifDiv, Gif, Title, Subtitle } from "./style";
 import { BsArrowBarDown } from 'react-icons/bs';
 import UrlGif from '../../assets/qrcode-gif.gif'
-/* import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField'; */
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
 
 const HomePage = () => {
     return <Main>
         <Header>
-            <h1> - Need a QR Code? - </h1>
-            <h3>Insert your url bellow</h3>
+            <Title> - Need a QR Code? - </Title>
+            <Subtitle>Insert your url below</Subtitle>
             <Icon>
                 <BsArrowBarDown />
             </Icon>
         </Header>
 
-        {/*   <Box
+        <Box
             sx={{
                 width: 500,
                 maxWidth: '50%',
-                color: 'White'
+                backgroundColor: 'White'
             }}
         >
             <TextField
                 fullWidth label="Url"
                 id="Url"
-            value={search}
-            onChange={setValue} 
+               /*  value={search}
+                onChange={setValue} */
             />
-        </Box> */}
+        </Box>
         <GifDiv>
             <Gif src={UrlGif}></Gif>
         </GifDiv>
