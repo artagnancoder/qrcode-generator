@@ -1,4 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
+import HomePage from './pages/HomePage/HomePage';
+import React from 'react'
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
@@ -15,12 +17,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 const App = () => {
-  return (
-    <div>
-      <GlobalStyle />
-DAS
-    </div>
-  );
+  return <div>
+    <GlobalStyle />
+    <HomePage />
+  </div>
+
 }
 
 export default App;
