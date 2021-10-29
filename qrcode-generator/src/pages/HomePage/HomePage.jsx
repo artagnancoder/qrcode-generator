@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Main, Icon, Header, GifDiv, Gif, Title, Subtitle, Get, Footer } from "./style";
 import { BsArrowBarDown } from 'react-icons/bs';
 import UrlGif from '../../assets/qrcode-gif.gif'
@@ -9,7 +9,15 @@ import Button from '@mui/material/Button';
 
 
 const HomePage = () => {
+
+    const [url, setUrl] = useState('')
+
+    const setValue = (e) => {
+        setUrl(e.target.value)
+    }
+
     return <Main>
+        {console.log('url', url)}
         <Header>
             <Title> - Need a QR Code? - </Title>
             <Subtitle>Insert your url below</Subtitle>
@@ -21,18 +29,19 @@ const HomePage = () => {
             <Box
                 sx={{
                     width: 500,
-                    maxWidth: '50%',
+                    maxWidth: '90%',
                     backgroundColor: '#b3afa4',
-                    borderRadius: '40px'
+                    height: 30
+                    
                 }}
             >
-               {/*  <TextField
-                    fullWidth label="Url"
+                <TextField
+                    fullWidth label="URL"
                     id="Url"
-                 value={search}
-                 onChange={setValue}
-                /> */}
-                
+                    value={url}
+                    onChange={setValue}
+                />
+
             </Box>
             <Stack spacing={2} direction="row" marginTop='15px'>
 

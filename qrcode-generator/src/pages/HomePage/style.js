@@ -80,13 +80,15 @@ width: 250px;
 height: 250px;
 `
 export const Get = styled.div`
-/* border: 1px solid white; */
+/* border: 1px solid white;  */
 
-width: 50%;
+width: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
+animation: ${morph} 1s linear 0.01s;
+
 `
 
 export const Footer = styled.div`
