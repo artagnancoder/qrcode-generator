@@ -1,8 +1,11 @@
-import { createGlobalStyle, withTheme } from 'styled-components';
-import HomePage from './pages/HomePage/HomePage';
+import { createGlobalStyle } from 'styled-components';
+import Router from './routes/Router'
 import React from 'react'
-import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+import { createTheme } from '@material-ui/core/styles'
+import { ThemeProvider } from '@material-ui/core';
 import { green } from '@mui/material/colors';
+
+
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
@@ -20,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
  
  }
 `
-const theme = createMuiTheme({
+const theme = createTheme({
   typography: {
     fontFamily: 'Inconsolata'
   },
@@ -34,10 +37,10 @@ const theme = createMuiTheme({
 
 const App = () => {
   return <ThemeProvider theme={theme}>
-    <div>
-      <GlobalStyle />
-      <HomePage />
-    </div>
+
+    <GlobalStyle />
+    <Router />
+
   </ThemeProvider>
 
 }
