@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import { useHistory } from 'react-router-dom';
+import GetUrl from '../../services/GetUrl';
 import { Main, Icon, Header, GifDiv, Gif, Title, Subtitle, Get, Footer } from "./style";
+import { goToResult } from '../../routes/Coordinator'
 import { BsArrowBarDown } from 'react-icons/bs';
 import UrlGif from '../../assets/qrcode-gif.gif'
 import Box from '@mui/material/Box';
@@ -11,6 +14,8 @@ import Button from '@mui/material/Button';
 const HomePage = () => {
 
     const [url, setUrl] = useState('')
+    const [data, setData] = useState('')
+    const history = useHistory()
 
     const setValue = (e) => {
         setUrl(e.target.value)
@@ -18,6 +23,7 @@ const HomePage = () => {
 
     return <Main>
         {console.log('url', url)}
+        {console.log('data', data)}
         <Header>
             <Title> - Need a QR Code? - </Title>
             <Subtitle>Insert your url below</Subtitle>
@@ -32,7 +38,7 @@ const HomePage = () => {
                     maxWidth: '90%',
                     backgroundColor: '#b3afa4',
                     height: 30
-                    
+
                 }}
             >
                 <TextField
@@ -47,7 +53,7 @@ const HomePage = () => {
 
                 <Button
                     variant="outlined"
-                    onClick={() => console.log('CLICK')}
+                    onClick={() => GetUrl(setData, url)/* ,  goToResult(history, data) */}
                 >
                     Get it!</Button>
             </Stack>
@@ -57,7 +63,7 @@ const HomePage = () => {
         </GifDiv>
 
         <Footer>
-            <h4>Created by @ <a href='https://www.linkedin.com/in/artagnan'>Igor Artagnan</a></h4>
+            <h4>Created by @  <a href='https://www.linkedin.com/in/artagnan'> Igor Artagnan </a> </h4>
             <h5>2021</h5>
         </Footer>
 
