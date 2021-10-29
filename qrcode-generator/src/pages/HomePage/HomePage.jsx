@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from 'react-router-dom';
 import GetUrl from '../../services/GetUrl';
-import { Main, Icon, Header, GifDiv, Gif, Title, Subtitle, Get, Footer } from "./style";
+import { Main, Icon, Header, GifDiv, Gif, Title, Subtitle, Get, Footer, Result, ResultImg } from "./style";
 import { goToResult } from '../../routes/Coordinator'
 import { BsArrowBarDown } from 'react-icons/bs';
 import UrlGif from '../../assets/qrcode-gif.gif'
@@ -9,6 +9,11 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+
+
+
 
 
 const HomePage = () => {
@@ -16,10 +21,27 @@ const HomePage = () => {
     const [url, setUrl] = useState('')
     const [data, setData] = useState('')
     const history = useHistory()
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
     const setValue = (e) => {
         setUrl(e.target.value)
     }
+
+    const style = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 400,
+        bgcolor: 'Black',
+        border: '2px solid #000',
+        boxShadow: 24,
+        p: 4,
+    };
+
+
 
     return <Main>
         {console.log('url', url)}
@@ -37,7 +59,8 @@ const HomePage = () => {
                     width: 500,
                     maxWidth: '90%',
                     backgroundColor: '#b3afa4',
-                    height: 30
+                    height: 53,
+                    textAlign: 'center'
 
                 }}
             >
@@ -51,21 +74,43 @@ const HomePage = () => {
             </Box>
             <Stack spacing={2} direction="row" marginTop='15px'>
 
+
                 <Button
                     variant="outlined"
-                    onClick={() => GetUrl(setData, url)/* ,  goToResult(history, data) */}
+                    onClick={() => GetUrl(setData, url)}
                 >
                     Get it!</Button>
             </Stack>
         </Get>
-        <GifDiv>
+
+
+        {data ? <><Stack spacing={2} direction="row" marginTop='15px'> <Button variant="outlined" onClick={handleOpen}> YOUR CODE HERE</Button></Stack> <Stack spacing={2} direction="row" marginTop='15px'> <Button variant="outlined"
+            onClick={() => window.location.reload()} > REFRESH</Button></Stack></> : <GifDiv>
             <Gif src={UrlGif}></Gif>
-        </GifDiv>
+        </GifDiv>}
+
+        <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+        >
+            <Box sx={style}>
+                <Typography id="modal-modal-description" sx={{ mt: 9 }}>
+                    <Result>
+                        <ResultImg src={data}></ResultImg>
+                    </Result>
+
+                </Typography>
+            </Box>
+        </Modal>
 
         <Footer>
             <h4>Created by @  <a href='https://www.linkedin.com/in/artagnan'> Igor Artagnan </a> </h4>
             <h5>2021</h5>
         </Footer>
+
+
 
     </Main>
 }

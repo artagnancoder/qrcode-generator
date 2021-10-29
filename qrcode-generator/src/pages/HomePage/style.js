@@ -18,7 +18,7 @@ const slideIn = keyframes`
   }
 `
 
- const typing = keyframes`
+const typing = keyframes`
  
   from { width: 0 }
   to { width: 100% }
@@ -27,7 +27,7 @@ const slideIn = keyframes`
 
 `
 export const Title = styled.h1`
-margin-top: -88px;
+margin-top: -76px;
 position: absolute;
     
 `
@@ -69,6 +69,7 @@ animation: ${slideIn} 1s linear 0.01s;
 export const GifDiv = styled.div`
 /*  border: 1px solid blue;
  */
+margin-top: 15px;
 width: 100%;
 height: 300px;
 display: flex;
@@ -108,4 +109,17 @@ h5{
     position: absolute;
     margin-top: 51px;
 }
-` 
+`
+
+export const Result = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+animation: ${morph} 1s linear 0.01s;
+border: 1px solid red;
+
+`
+export const ResultImg = styled.img`
+width: 100vw;
+height: 50vh;
+`
