@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { useHistory } from 'react-router-dom';
+import axios from "axios";
 import GetUrl from '../../services/GetUrl';
 import { Main, Icon, Header, GifDiv, Gif, Title, Subtitle, Get, Footer, Result, ResultImg } from "./style";
-import { goToResult } from '../../routes/Coordinator'
 import { BsArrowBarDown } from 'react-icons/bs';
 import UrlGif from '../../assets/qrcode-gif.gif'
 import Box from '@mui/material/Box';
@@ -11,22 +10,30 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-
-
+import fileDownload from 'js-file-download';
 
 
 
 const HomePage = () => {
 
+
     const [url, setUrl] = useState('')
     const [data, setData] = useState('')
-    const history = useHistory()
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
     const setValue = (e) => {
         setUrl(e.target.value)
+    }
+
+    const DownloadImg = (url, filename) => {
+        axios.get(url, {
+            responseType: 'blob',
+        })
+            .then((res) => {
+                fileDownload(res.data, filename)
+            })
     }
 
     const style = {
@@ -47,7 +54,7 @@ const HomePage = () => {
         {console.log('url', url)}
         {console.log('data', data)}
         <Header>
-            <Title> - Need a QR Code? - </Title>
+            <Title>Need a QR Code?</Title>
             <Subtitle>Insert your url below</Subtitle>
             <Icon>
                 <BsArrowBarDown />
@@ -100,6 +107,10 @@ const HomePage = () => {
                     <Result>
                         <ResultImg src={data}></ResultImg>
                     </Result>
+                    <Button
+                        variant="outlined"
+                        onClick={() => DownloadImg(data, 'qrcode.jpg')}
+                    > DOWNLOAD </Button>
 
                 </Typography>
             </Box>
@@ -109,8 +120,6 @@ const HomePage = () => {
             <h4>Created by @  <a href='https://www.linkedin.com/in/artagnan'> Igor Artagnan </a> </h4>
             <h5>2021</h5>
         </Footer>
-
-
 
     </Main>
 }
