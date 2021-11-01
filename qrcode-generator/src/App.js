@@ -1,11 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
-import Router from './routes/Router'
 import React from 'react'
 import { createTheme } from '@material-ui/core/styles'
 import { ThemeProvider } from '@material-ui/core';
 import { green } from '@mui/material/colors';
-
-
+import HomePage from './pages/HomePage/HomePage'
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
@@ -39,8 +37,7 @@ const App = () => {
   return <ThemeProvider theme={theme}>
 
     <GlobalStyle />
-    <Router />
-
+    <HomePage />
   </ThemeProvider>
 
 }
