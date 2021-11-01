@@ -24,12 +24,10 @@ const typing = keyframes`
   to { width: 100% }
 }
  
-
 `
 export const Title = styled.h1`
 margin-top: -76px;
 position: absolute;
-    
 `
 
 export const Subtitle = styled.h3`
@@ -44,7 +42,7 @@ export const Icon = styled.span`
 `
 
 export const Main = styled.div`
-/* border: 1px solid green; */
+
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
@@ -54,7 +52,6 @@ animation: ${morph} 1s linear 0.01s;
 `
 
 export const Header = styled.div`
-/* border: 1px solid red; */
 
 display: flex;
 flex-direction: column;
@@ -63,12 +60,10 @@ align-items: center;
 width: 100%;
 height: 150px;
 animation: ${slideIn} 1s linear 0.01s;
-
 `
 
 export const GifDiv = styled.div`
-/*  border: 1px solid blue;
- */
+
 margin-top: 15px;
 width: 100%;
 height: 300px;
@@ -81,7 +76,6 @@ width: 250px;
 height: 250px;
 `
 export const Get = styled.div`
-/* border: 1px solid white;  */
 
 width: 100%;
 display: flex;
@@ -89,7 +83,6 @@ justify-content: center;
 align-items: center;
 flex-direction: column;
 animation: ${morph} 1s linear 0.01s;
-
 `
 
 export const Footer = styled.div`
@@ -116,10 +109,35 @@ display: flex;
 justify-content: center;
 align-items: center;
 animation: ${morph} 1s linear 0.01s;
-border: 1px solid red;
 
 `
 export const ResultImg = styled.img`
 width: 100vw;
 height: 50vh;
+`
+export const NavResult = styled.div`
+
+width: 331px;
+display: flex;
+justify-content: space-around;
+margin-top: -123px;
+position: absolute;
+flex-direction: column;
+height: 117px;
+animation: ${slideIn} 1s linear 0.01s;
+`
+
+export const ResultTitle = styled.div`
+
+ position: absolute;
+ text-align: center;
+ margin-top: -201px;
+ width: 89vw;
+ animation: ${slideIn} 1s linear 0.01s;
+
+ @media (min-width: 900px){
+  width: 23vw;
+
+ }
+
 `
