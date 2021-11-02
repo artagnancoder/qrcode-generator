@@ -4,19 +4,6 @@
 Aplicação web de um gerador de QR code. Nesse projeto apliquei meus conhecimentos recém adquiridos em keyframes e também explorei a customização de temas usando o Material UI.
 
 
-## Authors
-
-- [@artagnancoder](https://github.com/artagnancoder)
-
-
-
-
-
-
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
 
 
 ## Funcionalidades
@@ -33,6 +20,29 @@ Aplicação web de um gerador de QR code. Nesse projeto apliquei meus conhecimen
 - <img src="https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white" target="_blank">
 - <a href='https://www.npmjs.com/package/js-file-download'> Js File Download </a>
 
+
+# Clone este repositório
+$ git clone <https://github.com/future4code/molina-labe-commerce8>
+
+# Acesse a pasta do projeto no terminal
+$ cd ./molina-labe-commerce8
+
+# Instale as dependências
+$ npm install
+
+# Para iniciar o projeto
+$ npm run start
+
+# O servidor inciará na porta:3000 - acesse <http://localhost:3000>
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+## Authors
+
+- [@artagnancoder](https://github.com/artagnancoder)
 
 
 
