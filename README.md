@@ -13,7 +13,7 @@ Aplicação web de um gerador de QR code. Nesse projeto utilizei meus conhecimen
 
 
 
-<p> &#9989 </p>## Funcionalidades
+## Funcionalidades
 
 - Geração e download de QR Code.
 
