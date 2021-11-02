@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import GetUrl from '../../services/GetUrl';
-import { Main, Icon, Header, GifDiv, Gif, Title, Subtitle, Get, Footer, Result, ResultImg } from "./style";
+import { Main, Icon, Header, GifDiv, Gif, Title, Subtitle, Get, Footer, Result, ResultImg, NavResult, ResultTitle, style } from "./style";
 import { BsArrowBarDown } from 'react-icons/bs';
 import UrlGif from '../../assets/qrcode-gif.gif'
 import Box from '@mui/material/Box';
@@ -12,20 +12,19 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import fileDownload from 'js-file-download';
 
-
-
 const HomePage = () => {
-
 
     const [url, setUrl] = useState('')
     const [data, setData] = useState('')
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
 
-    const setValue = (e) => {
-        setUrl(e.target.value)
+    const handleClose = () => {
+        setOpen(false);
+        window.location.reload()
     }
+
+    const setValue = e => setUrl(e.target.value)
 
     const DownloadImg = (url, filename) => {
         axios.get(url, {
@@ -36,23 +35,8 @@ const HomePage = () => {
             })
     }
 
-    const style = {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: 400,
-        bgcolor: 'Black',
-        border: '2px solid #000',
-        boxShadow: 24,
-        p: 4,
-    };
-
-
-
     return <Main>
-        {console.log('url', url)}
-        {console.log('data', data)}
+
         <Header>
             <Title>Need a QR Code?</Title>
             <Subtitle>Insert your url below</Subtitle>
@@ -79,21 +63,18 @@ const HomePage = () => {
                 />
 
             </Box>
-            <Stack spacing={2} direction="row" marginTop='15px'>
-
+            <Stack spacing={2} direction="row" marginTop='15px' marginBottom='-17px'>
 
                 <Button
                     variant="outlined"
-                    onClick={() => GetUrl(setData, url)}
+                    onClick={() => GetUrl(setData, url, handleOpen)}
                 >
                     Get it!</Button>
             </Stack>
         </Get>
 
-
-        {data ? <><Stack spacing={2} direction="row" marginTop='15px'> <Button variant="outlined" onClick={handleOpen}> YOUR CODE HERE</Button></Stack> <Stack spacing={2} direction="row" marginTop='15px'> <Button variant="outlined"
-            onClick={() => window.location.reload()} > REFRESH</Button></Stack></> : <GifDiv>
-            <Gif src={UrlGif}></Gif>
+        {data ? <><Stack spacing={2} direction="row" marginTop='15px'> </Stack> <Stack spacing={2} direction="row" marginTop='15px'></Stack></> : <GifDiv>
+            <Gif src={UrlGif} alt='QR code gif'></Gif>
         </GifDiv>}
 
         <Modal
@@ -103,14 +84,26 @@ const HomePage = () => {
             aria-describedby="modal-modal-description"
         >
             <Box sx={style}>
-                <Typography id="modal-modal-description" sx={{ mt: 9 }}>
+                <Typography id="modal-modal-description" sx={{ mt: 25 }}>
+
+                    <ResultTitle>
+                        <h1>Done!</h1>
+                    </ResultTitle>
+                    <NavResult>
+                        <Button
+                            variant="outlined"
+                            onClick={() => DownloadImg(data, 'qrcode.jpg')}
+                        > DOWNLOAD </Button>
+
+                        <Button
+                            variant="outlined"
+                            onClick={handleClose}
+                        > CLOSE </Button>
+                    </NavResult>
+
                     <Result>
                         <ResultImg src={data}></ResultImg>
                     </Result>
-                    <Button
-                        variant="outlined"
-                        onClick={() => DownloadImg(data, 'qrcode.jpg')}
-                    > DOWNLOAD </Button>
 
                 </Typography>
             </Box>
