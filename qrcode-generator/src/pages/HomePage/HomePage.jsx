@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import GetUrl from '../../services/GetUrl';
-import { Main, Icon, Header, GifDiv, Gif, Title, Subtitle, Get, Footer, Result, ResultImg, NavResult, ResultTitle } from "./style";
+import { Main, Icon, Header, GifDiv, Gif, Title, Subtitle, Get, Footer, Result, ResultImg, NavResult, ResultTitle, style } from "./style";
 import { BsArrowBarDown } from 'react-icons/bs';
 import UrlGif from '../../assets/qrcode-gif.gif'
 import Box from '@mui/material/Box';
@@ -12,23 +12,19 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import fileDownload from 'js-file-download';
 
-
-
 const HomePage = () => {
-
 
     const [url, setUrl] = useState('')
     const [data, setData] = useState('')
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
+
     const handleClose = () => {
         setOpen(false);
         window.location.reload()
     }
 
-    const setValue = (e) => {
-        setUrl(e.target.value)
-    }
+    const setValue = e => setUrl(e.target.value)
 
     const DownloadImg = (url, filename) => {
         axios.get(url, {
@@ -38,20 +34,6 @@ const HomePage = () => {
                 fileDownload(res.data, filename)
             })
     }
-
-    const style = {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: 400,
-        bgcolor: 'Black',
-        border: '2px solid #000',
-        boxShadow: 24,
-        p: 4,
-    };
-
-
 
     return <Main>
 
@@ -91,9 +73,8 @@ const HomePage = () => {
             </Stack>
         </Get>
 
-
         {data ? <><Stack spacing={2} direction="row" marginTop='15px'> </Stack> <Stack spacing={2} direction="row" marginTop='15px'></Stack></> : <GifDiv>
-            <Gif src={UrlGif}></Gif>
+            <Gif src={UrlGif} alt='QR code gif'></Gif>
         </GifDiv>}
 
         <Modal
@@ -118,7 +99,6 @@ const HomePage = () => {
                             variant="outlined"
                             onClick={handleClose}
                         > CLOSE </Button>
-
                     </NavResult>
 
                     <Result>

@@ -18,13 +18,6 @@ const slideIn = keyframes`
   }
 `
 
-const typing = keyframes`
- 
-  from { width: 0 }
-  to { width: 100% }
-}
- 
-`
 export const Title = styled.h1`
 margin-top: -76px;
 position: absolute;
@@ -36,13 +29,12 @@ margin-top: -1px;
 `
 
 export const Icon = styled.span`
-    font-size: 40px;
-    margin-top: 90px;
-    position: absolute;
+font-size: 40px;
+margin-top: 90px;
+position: absolute;
 `
 
 export const Main = styled.div`
-
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
@@ -52,7 +44,6 @@ animation: ${morph} 1s linear 0.01s;
 `
 
 export const Header = styled.div`
-
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -63,7 +54,6 @@ animation: ${slideIn} 1s linear 0.01s;
 `
 
 export const GifDiv = styled.div`
-
 margin-top: 15px;
 width: 100%;
 height: 300px;
@@ -76,7 +66,6 @@ width: 250px;
 height: 250px;
 `
 export const Get = styled.div`
-
 width: 100%;
 display: flex;
 justify-content: center;
@@ -116,7 +105,6 @@ width: 100vw;
 height: 50vh;
 `
 export const NavResult = styled.div`
-
 width: 331px;
 display: flex;
 justify-content: space-around;
@@ -128,7 +116,6 @@ animation: ${slideIn} 1s linear 0.01s;
 `
 
 export const ResultTitle = styled.div`
-
  position: absolute;
  text-align: center;
  margin-top: -201px;
@@ -136,8 +123,20 @@ export const ResultTitle = styled.div`
  animation: ${slideIn} 1s linear 0.01s;
 
  @media (min-width: 900px){
-  width: 23vw;
+  width: 22vw;
 
  }
 
 `
+
+export const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'Black',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
