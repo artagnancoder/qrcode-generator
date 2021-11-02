@@ -7,7 +7,7 @@
 Aplicação web de um gerador de QR code. Nesse projeto utilizei meus conhecimentos recém adquiridos em keyframes e também explorei a customização de temas usando o Material UI.
 
 <div align="center"> 
-  <h2> <a href=''> Acesse aqui </a> </h2>
+  <h2> <a href='https://needaqrcode.surge.sh/'> Acesse aqui </a> </h2>
 </div>
 
 
