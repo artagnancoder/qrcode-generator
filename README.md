@@ -21,11 +21,13 @@ Aplicação web de um gerador de QR code. Nesse projeto apliquei meus conhecimen
 - <a href='https://www.npmjs.com/package/js-file-download'> Js File Download </a>
 
 
+## Rodando o projeto
+
 # Clone este repositório
-$ git clone <https://github.com/future4code/molina-labe-commerce8>
+$ git clone <https://github.com/artagnancoder/qrcode-generator.git>
 
 # Acesse a pasta do projeto no terminal
-$ cd ./molina-labe-commerce8
+$ cd ./qrcode-generator
 
 # Instale as dependências
 $ npm install
@@ -34,7 +36,6 @@ $ npm install
 $ npm run start
 
 # O servidor inciará na porta:3000 - acesse <http://localhost:3000>
-
 
 ## License
 
