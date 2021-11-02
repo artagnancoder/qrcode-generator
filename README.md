@@ -1,8 +1,10 @@
 <div align="center">
 <img src='https://c.tenor.com/XDAe8PDHSIMAAAAd/downsign-qr-code.gif' width="200" height="200">
   </div>
+<div align="center"> 
+<h1> Need a qr code? </h1>
+</div>
 
-# Need a qr code?
 
 Aplicação web de um gerador de QR code. Nesse projeto utilizei meus conhecimentos recém adquiridos em keyframes e também explorei a customização de temas usando o Material UI.
 
