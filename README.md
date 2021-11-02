@@ -4,7 +4,7 @@
 
 # Need a qr code?
 
-Aplicação web de um gerador de QR code. Nesse projeto apliquei meus conhecimentos recém adquiridos em keyframes e também explorei a customização de temas usando o Material UI.
+Aplicação web de um gerador de QR code. Nesse projeto utilizei meus conhecimentos recém adquiridos em keyframes e também explorei a customização de temas usando o Material UI.
 
 
 
