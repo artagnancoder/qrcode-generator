@@ -26,7 +26,7 @@ Aplicação web de um gerador de QR code. Nesse projeto apliquei meus conhecimen
 ## Tecnologias utilizadas
 
 - <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black target="_blank">
-- <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"_blank">
+- 
 - HTML5
 - React.js 
 - Styled Components
