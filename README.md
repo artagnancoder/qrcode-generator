@@ -6,10 +6,14 @@
 
 Aplicação web de um gerador de QR code. Nesse projeto utilizei meus conhecimentos recém adquiridos em keyframes e também explorei a customização de temas usando o Material UI.
 
+<div align="center"> 
+  <h2> <a href=''> Acesse aqui </a> </h2>
+</div>
 
 
 
-## Funcionalidades
+
+<p> &#9989 </p>## Funcionalidades
 
 - Geração e download de QR Code.
 
@@ -40,11 +44,11 @@ $ npm run start
 
 ### O servidor inciará na porta:3000 - acesse <http://localhost:3000>
 
-## License
+## Licença 
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
-## Authors
+## Autor
 
 - [@artagnancoder](https://github.com/artagnancoder)
 
