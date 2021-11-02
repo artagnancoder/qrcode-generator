@@ -23,19 +23,19 @@ Aplicação web de um gerador de QR code. Nesse projeto apliquei meus conhecimen
 
 ## Rodando o projeto
 
-# Clone este repositório
+### Clone este repositório
 $ git clone <https://github.com/artagnancoder/qrcode-generator.git>
 
-# Acesse a pasta do projeto no terminal
+### Acesse a pasta do projeto no terminal
 $ cd ./qrcode-generator
 
-# Instale as dependências
+### Instale as dependências
 $ npm install
 
-# Para iniciar o projeto
+### Para iniciar o projeto
 $ npm run start
 
-# O servidor inciará na porta:3000 - acesse <http://localhost:3000>
+### O servidor inciará na porta:3000 - acesse <http://localhost:3000>
 
 ## License
 
