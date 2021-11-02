@@ -1,4 +1,4 @@
-<img src='https://c.tenor.com/XDAe8PDHSIMAAAAd/downsign-qr-code.gif'>
+<img src='https://c.tenor.com/XDAe8PDHSIMAAAAd/downsign-qr-code.gif' width="100" height="100">
 
 # Need a qr code?
 
